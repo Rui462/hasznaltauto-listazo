@@ -92,6 +92,7 @@ if(mydb.is_connected() and hiba==0):
         if x[1] not in talalatok:
             torolve+=1
             sql = f"UPDATE `talalatok` SET `elerheto`=0 WHERE url = '%s'" % (url)
+            cur.execute(sql)
             mydb.commit()  
     
     print("Sikeres adatbázisfrissítés!")
@@ -100,4 +101,3 @@ if(mydb.is_connected() and hiba==0):
     print("==================================")
 
     oldal.close()
-
